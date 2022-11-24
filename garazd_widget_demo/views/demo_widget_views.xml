@@ -32,7 +32,7 @@
                         </group>
                     </group>
                     <group>
-                        <field name="color" widget="color" />
+                        <field name="color_code" widget="color" />
                     </group>
                 </sheet>
             </form>

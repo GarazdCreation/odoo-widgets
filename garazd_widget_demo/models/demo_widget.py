@@ -24,6 +24,7 @@ class DemoWidget(models.Model):
              'a string representing as a simple formula.'
              'Supported arithmetic operations: + - * / ^ ( )',
     )
-    color = fields.Char(
+    color_code = fields.Char(
+        string="Color",
         help="Here you can set a specific HTML color index (e.g. #ff0000).",
     )
