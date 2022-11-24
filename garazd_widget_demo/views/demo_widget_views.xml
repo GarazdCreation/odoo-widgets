@@ -31,6 +31,9 @@
                             </div>
                         </group>
                     </group>
+                    <group>
+                        <field name="color" widget="color" />
+                    </group>
                 </sheet>
             </form>
         </field>
