@@ -17,23 +17,35 @@
                         <label for="name" class="oe_edit_only"/>
                         <h3><field name="name" placeholder="Name"/></h3>
                     </div>
-                    <group>
-                        <group>
-                            <field name="calculator_int" widget="calculator" placeholder="=2*(3+1)"/>
-                            <field name="calculator_float" widget="calculator" placeholder="=2.5*(4+1)"/>
-                        </group>
-                        <group>
-                            <div class="o_row" colspan="2">
-                                <span class="text-muted">Put this sample to the field "=2*(3+1)", and you will get the result "8.00".</span>
-                            </div>
-                            <div class="o_row" colspan="2">
-                                <span class="text-muted">Put this sample to the field "=2.5*(4+1)", and you will get the result "12.50".</span>
-                            </div>
-                        </group>
-                    </group>
-                    <group>
-                        <field name="color_code" widget="color" />
-                    </group>
+                    <notebook>
+                        <page string="Calculator" name="calculator">
+                            <group>
+                                <group>
+                                    <field name="calculator_int" widget="calculator" placeholder="=2*(3+1)"/>
+                                    <field name="calculator_float" widget="calculator" placeholder="=2.5*(4+1)"/>
+                                </group>
+                                <group>
+                                    <div class="o_row" colspan="2">
+                                        <span class="text-muted">Put this sample to the field "=2*(3+1)", and you will get the result "8.00".</span>
+                                    </div>
+                                    <div class="o_row" colspan="2">
+                                        <span class="text-muted">Put this sample to the field "=2.5*(4+1)", and you will get the result "12.50".</span>
+                                    </div>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Color" name="color">
+                            <group>
+                                <field name="color_code" widget="color" />
+                            </group>
+                        </page>
+                        <page string="Ace" name="ace">
+                            <separator string="Python Sample Code" colspan="2"/>
+                            <field name="code_python" widget="ace" options="{'mode': 'python'}"/>
+                            <separator string="XML Sample Code" colspan="2"/>
+                            <field name="code_xml" widget="ace" options="{'mode': 'qweb'}"/>
+                        </page>
+                    </notebook>
                 </sheet>
             </form>
         </field>

@@ -28,3 +28,24 @@ class DemoWidget(models.Model):
         string="Color",
         help="Here you can set a specific HTML color index (e.g. #ff0000).",
     )
+    code_python = fields.Text(
+        string='Python Code',
+        default="""
+from datetime import datetime, timedelta
+
+def get_product_name(product):
+    return product.name
+        """,
+    )
+    code_xml = fields.Text(
+        string='XML Code',
+        default="""<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="menu_demo_widget_root" model="ir.ui.menu">
+        <field name="name">Widget Demo</field>
+        <field name="web_icon">module,static/description/icon.png</field>
+        <field name="sequence" eval="10"/>
+    </record>
+</odoo>    
+        """,
+    )
